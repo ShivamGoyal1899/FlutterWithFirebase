@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'SignIn/signin_screen.dart';
 import 'WallpaperApp/wall_screen.dart';
 import 'CrudApp/crud_screen.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_analytics/observer.dart';
 
 void main() => runApp(FirebaseApp());
 
@@ -11,11 +13,16 @@ class FirebaseApp extends StatefulWidget {
 }
 
 class _FirebaseAppState extends State<FirebaseApp> {
+  static FirebaseAnalytics analytics = FirebaseAnalytics();
+  static FirebaseAnalyticsObserver observer =
+      FirebaseAnalyticsObserver(analytics: analytics);
+
   PageController _myPage = PageController(initialPage: 0);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorObservers: <NavigatorObserver>[observer],
       debugShowCheckedModeBanner: false,
       title: 'FirebaseWithFlutter',
       theme: ThemeData(
@@ -49,7 +56,7 @@ class _FirebaseAppState extends State<FirebaseApp> {
             ),
             Center(
               child: Container(
-                child: WallScreen(),
+                child: WallScreen(analytics: analytics, observer: observer),
               ),
             ),
           ],

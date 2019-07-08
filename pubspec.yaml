@@ -9,11 +9,12 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^0.1.2
-  firebase_auth: 0.5.3
+  firebase_auth:
   google_sign_in: 3.0.0
-  cloud_firestore: ^0.3.2
+  cloud_firestore:
   flutter_staggered_grid_view:
   firebase_admob:
+  firebase_analytics:
 
 dev_dependencies:
   flutter_test:
