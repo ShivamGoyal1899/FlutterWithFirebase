@@ -1,4 +1,4 @@
-name: flutterwithfirebase
+name: FlutterWithFirebase
 description: Flutter with Firebase
 version: 1.0.0+1
 
@@ -13,7 +13,7 @@ dependencies:
   google_sign_in: 3.0.0
   cloud_firestore:
   flutter_staggered_grid_view:
-  firebase_admob:
+  firebase_admob: 0.5.2
   firebase_analytics:
 
 dev_dependencies:
